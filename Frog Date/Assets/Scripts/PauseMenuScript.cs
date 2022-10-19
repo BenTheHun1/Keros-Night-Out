@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu;
+    public GameObject pauseMenu;
+    public AudioSource sfx;
 
     // Start is called before the first frame update
     void Start()
@@ -14,18 +15,32 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            PauseGame();
+        }
+    }
+
+
     // Pauses the game and opens up the pause menu.
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0;
-    }
 
-    // Resumes the game and closes the pause menu.
-    public void ResumeGame()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+
+        if (pauseMenu.activeSelf)
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+            sfx.UnPause();
+            sfx.loop = true;
+        }
+        else
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+            sfx.Pause();
+        }
     }
 
     // Returns the player to the title screen.
