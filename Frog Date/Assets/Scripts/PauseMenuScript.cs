@@ -22,12 +22,9 @@ public class PauseMenuScript : MonoBehaviour
         }
     }
 
-
     // Pauses the game and opens up the pause menu.
     public void PauseGame()
     {
-
-
         if (pauseMenu.activeSelf)
         {
             pauseMenu.SetActive(false);
