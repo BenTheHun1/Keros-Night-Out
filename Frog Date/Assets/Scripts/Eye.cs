@@ -9,17 +9,6 @@ public class Eye : MonoBehaviour
 
     public Camera mainCamera;
     private Vector3 _origin;
-    //private Rigidbody myCanvas = gameObject;
-
-
-    //Vector2 pos;
-    //RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
-    //transform.position = myCanvas.transform.TransformPoint(pos);
-
-    //Vector2 pos;
-    //RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
-    //if we want to follow the mouse we do this:
-    //transform.position = myCanvas.transform.TransformPoint(pos);
 
     void Start()
     {

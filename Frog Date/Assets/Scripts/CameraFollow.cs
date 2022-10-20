@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         float mouseX = (Input.mousePosition.x / Screen.width) - 0.5f;
         float mouseY = (Input.mousePosition.y / Screen.height) - 0.5f;
-        transform.localRotation = Quaternion.Euler(new Vector4(-1f * (mouseY * 15f), mouseX * 15f, transform.localRotation.z));
+        transform.localRotation = Quaternion.Euler(new Vector4(-1f * (mouseY * 5f), mouseX * 5f, transform.localRotation.z));
     }
 }
