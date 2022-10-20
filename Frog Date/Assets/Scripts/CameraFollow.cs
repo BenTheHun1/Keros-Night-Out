@@ -16,6 +16,6 @@ public class CameraFollow : MonoBehaviour
     {
         float mouseX = (Input.mousePosition.x / Screen.width) - 0.5f;
         float mouseY = (Input.mousePosition.y / Screen.height) - 0.5f;
-        transform.localRotation = Quaternion.Euler(new Vector4(-1f * (mouseY * 5f), mouseX * 5f, transform.localRotation.z));
+        transform.localRotation = Quaternion.Euler(new Vector4(-1f * (mouseY * 15f), mouseX * 15f, transform.localRotation.z));
     }
 }
