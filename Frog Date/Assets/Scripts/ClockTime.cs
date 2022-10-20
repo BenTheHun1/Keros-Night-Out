@@ -16,6 +16,7 @@ public class ClockTime : MonoBehaviour
     private int timeCountMultiplier = 1;
 
     void Update()
+
     {
        curSec =+ Time.time;
        Debug.Log(curSec);
@@ -26,10 +27,5 @@ public class ClockTime : MonoBehaviour
             clockTimeMin++;
             timeCountMultiplier++;
        }
-    }
-
-    public void Test()
-    {
-        text.text = "Success";
     }
 }
