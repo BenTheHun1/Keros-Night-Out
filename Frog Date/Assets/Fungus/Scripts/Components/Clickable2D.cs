@@ -18,18 +18,20 @@ namespace Fungus
 
         [Tooltip("Mouse texture to use when hovering mouse over object")]
         [SerializeField] protected Texture2D hoverCursor;
+        [Tooltip("Hover Cursor Hot Spot to use.")]
+        [SerializeField] protected Vector2 hotSpot;
 
         [Tooltip("Use the UI Event System to check for clicks. Clicks that hit an overlapping UI object will be ignored. Camera must have a PhysicsRaycaster component, or a Physics2DRaycaster for 2D colliders.")]
         [SerializeField] protected bool useEventSystem;
 
-        protected virtual void ChangeCursor(Texture2D cursorTexture)
+        protected virtual void ChangeCursor(Texture2D cursorTexture, Vector2 hotspot)
         {
             if (!clickEnabled)
             {
                 return;
             }
 
-            Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(cursorTexture, hotspot, CursorMode.Auto);
         }
 
         protected virtual void DoPointerClick()
@@ -46,7 +48,7 @@ namespace Fungus
 
         protected virtual void DoPointerEnter()
         {
-            ChangeCursor(hoverCursor);
+            ChangeCursor(hoverCursor, hotSpot);
         }
 
         protected virtual void DoPointerExit()
