@@ -17,6 +17,9 @@ public class ClockTime : MonoBehaviour
 
     private GameObject[] Clickables;
 
+    private bool waiter1;
+
+
     private void Start()
     {
         Clickables = GameObject.FindGameObjectsWithTag("clickable");
@@ -33,6 +36,12 @@ public class ClockTime : MonoBehaviour
         {
             clockTimeMin++;
             timeCountMultiplier++;
+        }
+
+        if ((timeCountMultiplier == 2  && !flowchart.HasExecutingBlocks() && !waiter1) || Input.GetKeyDown(KeyCode.Backspace))
+        {
+            waiter1 = true;
+            flowchart.ExecuteBlock("Waiter1");
         }
 
 
