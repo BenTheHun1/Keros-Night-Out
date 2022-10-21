@@ -18,7 +18,7 @@ public class ClockTime : MonoBehaviour
 
     private GameObject[] Clickables;
 
-    private bool waiter1, date_arrive, date_work, date_dates, waiter2;
+    private bool waiter1, star, date_arrive, date_work, date_dates, waiter2;
 
 
     private void Start()
@@ -44,26 +44,31 @@ public class ClockTime : MonoBehaviour
 
         if (!flowchart.HasExecutingBlocks())
         {
-            if (!waiter1 && (timeCountMultiplier == 2 || Input.GetKeyDown(KeyCode.Backspace))) {
+            if (!waiter1 && (timeCountMultiplier >= 2 || Input.GetKeyDown(KeyCode.Backspace))) {
                 waiter1 = true;
                 flowchart.ExecuteBlock("Waiter1");
             }
-            else if (!date_arrive && (timeCountMultiplier == 4 || Input.GetKeyDown(KeyCode.Backspace)))
+            else if (!star && (timeCountMultiplier >= 3 || Input.GetKeyDown(KeyCode.Backspace)))
+            {
+                star = true;
+                flowchart.ExecuteBlock("ShootStar");
+            }
+            else if (!date_arrive && (timeCountMultiplier >= 4 || Input.GetKeyDown(KeyCode.Backspace)))
             {
                 date_arrive = true;
                 flowchart.ExecuteBlock("DateHere");
             }
-            else if (!date_work && (timeCountMultiplier == 5 || Input.GetKeyDown(KeyCode.Backspace)))
+            else if (!date_work && (timeCountMultiplier >= 5 || Input.GetKeyDown(KeyCode.Backspace)))
             {
                 date_work = true;
                 flowchart.ExecuteBlock("DateJob");
             }
-            else if (!date_dates && (timeCountMultiplier == 6 || Input.GetKeyDown(KeyCode.Backspace)))
+            else if (!date_dates && (timeCountMultiplier >= 6 || Input.GetKeyDown(KeyCode.Backspace)))
             {
                 date_dates = true;
                 flowchart.ExecuteBlock("DateDates");
             }
-            else if (!waiter2 && (timeCountMultiplier == 7 || Input.GetKeyDown(KeyCode.Backspace)))
+            else if (!waiter2 && (timeCountMultiplier >= 7 || Input.GetKeyDown(KeyCode.Backspace)))
             {
                 waiter2 = true;
                 flowchart.ExecuteBlock("Waiter2");
