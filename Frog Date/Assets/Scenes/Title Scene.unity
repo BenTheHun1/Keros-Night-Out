@@ -162,7 +162,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 14.8035}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &76706948
 MonoBehaviour:
@@ -443,18 +443,19 @@ MonoBehaviour:
   m_text: 'David Wu - Programmer, Audio & SFX, UI
 
     Ben Hunsicker - Programmer,
-    UI
+    UI, Writer
 
     David Rozell - Programmer
 
     Taylor Burgess - 2D Artist
 
     Kalynn
-    Vazquez - 2D Artist
+    Vazquez - 2D Artist, Animator
 
-    Ian Helbig - 2D Animator
+    Ian Helbig - 2D Artist, Animator
 
-    Tony Tran - 2D Artist'
+    Tony
+    Tran - 2D Artist, Animator'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1203,7 +1204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694642090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 433.86475, y: 208.23805, z: -329.4098}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1581,8 +1582,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 481, y: 108}
-  m_SizeDelta: {x: 300, y: 500}
+  m_AnchoredPosition: {x: 310, y: 158}
+  m_SizeDelta: {x: 204.6, y: 228.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &902625259
 MonoBehaviour:
@@ -1602,7 +1603,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 10
+  m_Spacing: 20
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -1627,15 +1628,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191067668159546860, guid: afc9ac729819e4a40972ff23cf8f2efe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.030275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191067668159546860, guid: afc9ac729819e4a40972ff23cf8f2efe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0228264
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191067668159546860, guid: afc9ac729819e4a40972ff23cf8f2efe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.050481327
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191067668159546860, guid: afc9ac729819e4a40972ff23cf8f2efe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1725,7 +1726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter
+  m_text: Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
