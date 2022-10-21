@@ -14,8 +14,8 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: FrogTeam
   productName: Kero's Night Out
-  defaultCursor: {fileID: 2800000, guid: 447a23f156492b143ba76e15da463617, type: 3}
-  cursorHotspot: {x: 12, y: 4}
+  defaultCursor: {fileID: 2800000, guid: d66005ced4bc28740bdd4f9fd506129f, type: 3}
+  cursorHotspot: {x: 7, y: 2}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 0
   m_ShowUnitySplashLogo: 1

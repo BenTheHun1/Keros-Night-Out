@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783653f177d2c3c4da6333aebadc4ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openCursor: {fileID: 2800000, guid: 447a23f156492b143ba76e15da463617, type: 3}
-  pointCursor: {fileID: 2800000, guid: cedd456f5d50d214d971449ad58cc881, type: 3}
-  cursorHotSpot: {x: 12, y: 4}
+  openCursor: {fileID: 2800000, guid: d66005ced4bc28740bdd4f9fd506129f, type: 3}
+  pointCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
+  cursorHotSpot: {x: 7, y: 2}
