@@ -10,6 +10,7 @@ public class ClockTime : MonoBehaviour
     public Flowchart flowchart;
     public TextMeshProUGUI text;
     public string clockTime;
+    private float timer = 0.0f;
     private float curSec;
     private int clockTimeMin = 10;
     private int clockTimeHour = 9;
@@ -22,12 +23,16 @@ public class ClockTime : MonoBehaviour
 
     private void Start()
     {
+        flowchart.StopAllBlocks();
+        Time.timeScale = 1;
         Clickables = GameObject.FindGameObjectsWithTag("clickable");
+        timer = 0f;
     }
 
     void Update()
     {
-        curSec =+ Time.time;
+        timer += Time.deltaTime;
+        curSec = (float)(timer);
         Debug.Log(curSec);
         clockTime = clockTimeHour + ":" + clockTimeMin;
         flowchart.SetStringVariable("ClockTime", clockTime);

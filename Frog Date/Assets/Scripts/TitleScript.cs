@@ -11,12 +11,13 @@ public class TitleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Time.timeScale = 0;
     }
 
     // Starts the game - brings the player to the main game.
     public void StartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 
