@@ -17,7 +17,7 @@ public class ClockTime : MonoBehaviour
 
     private GameObject[] Clickables;
 
-    private bool waiter1;
+    private bool waiter1, date_arrive, date_work, date_dates, waiter2;
 
 
     private void Start()
@@ -25,11 +25,10 @@ public class ClockTime : MonoBehaviour
         Clickables = GameObject.FindGameObjectsWithTag("clickable");
     }
 
-
     void Update()
     {
         curSec =+ Time.time;
-        //Debug.Log(curSec);
+        Debug.Log(curSec);
         clockTime = clockTimeHour + ":" + clockTimeMin;
         flowchart.SetStringVariable("ClockTime", clockTime);
         if (curSec > 60 * timeCountMultiplier)
@@ -38,10 +37,32 @@ public class ClockTime : MonoBehaviour
             timeCountMultiplier++;
         }
 
-        if ((timeCountMultiplier == 2  && !flowchart.HasExecutingBlocks() && !waiter1) || Input.GetKeyDown(KeyCode.Backspace))
+        if (!flowchart.HasExecutingBlocks())
         {
-            waiter1 = true;
-            flowchart.ExecuteBlock("Waiter1");
+            if (!waiter1 && (timeCountMultiplier == 2 || Input.GetKeyDown(KeyCode.Backspace))) {
+                waiter1 = true;
+                flowchart.ExecuteBlock("Waiter1");
+            }
+            else if (!date_arrive && (timeCountMultiplier == 4 || Input.GetKeyDown(KeyCode.Backspace)))
+            {
+                date_arrive = true;
+                flowchart.ExecuteBlock("DateHere");
+            }
+            else if (!date_work && (timeCountMultiplier == 5 || Input.GetKeyDown(KeyCode.Backspace)))
+            {
+                date_work = true;
+                flowchart.ExecuteBlock("DateJob");
+            }
+            else if (!date_dates && (timeCountMultiplier == 6 || Input.GetKeyDown(KeyCode.Backspace)))
+            {
+                date_dates = true;
+                flowchart.ExecuteBlock("DateDates");
+            }
+            else if (!waiter2 && (timeCountMultiplier == 7 || Input.GetKeyDown(KeyCode.Backspace)))
+            {
+                waiter2 = true;
+                flowchart.ExecuteBlock("Waiter2");
+            }
         }
 
 
