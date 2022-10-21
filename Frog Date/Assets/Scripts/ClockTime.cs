@@ -33,7 +33,7 @@ public class ClockTime : MonoBehaviour
     {
         timer += Time.deltaTime;
         curSec = (float)(timer);
-        Debug.Log(curSec);
+        //Debug.Log(curSec);
         clockTime = clockTimeHour + ":" + clockTimeMin;
         flowchart.SetStringVariable("ClockTime", clockTime);
         if (curSec > 60 * timeCountMultiplier)
