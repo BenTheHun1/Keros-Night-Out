@@ -10,11 +10,10 @@ public class ClockTime : MonoBehaviour
     public Flowchart flowchart;
     public TextMeshProUGUI text;
     public string clockTime;
-    private float timer = 0.0f;
-    private float curSec;
+    private float totalSec, curSec;
     private int clockTimeMin = 10;
     private int clockTimeHour = 9;
-    private int timeCountMultiplier = 1;
+    public GameObject optionButton0;
 
     private GameObject[] Clickables;
 
@@ -26,49 +25,48 @@ public class ClockTime : MonoBehaviour
         flowchart.StopAllBlocks();
         Time.timeScale = 1;
         Clickables = GameObject.FindGameObjectsWithTag("clickable");
-        timer = 0f;
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
-        curSec = (float)(timer);
+        totalSec += Time.deltaTime;
+        curSec += Time.deltaTime;
         //Debug.Log(curSec);
         clockTime = clockTimeHour + ":" + clockTimeMin;
         flowchart.SetStringVariable("ClockTime", clockTime);
-        if (curSec > 60 * timeCountMultiplier)
+        if (curSec >= 60f)
         {
             clockTimeMin++;
-            timeCountMultiplier++;
+            curSec -= 60f;
         }
 
-        if (!flowchart.HasExecutingBlocks())
+        if (!flowchart.HasExecutingBlocks() && !optionButton0.activeSelf)
         {
-            if (!waiter1 && (timeCountMultiplier >= 2 || Input.GetKeyDown(KeyCode.Backspace))) {
+            if (!waiter1 && (totalSec >= 40f || Input.GetKeyDown(KeyCode.Backspace))) {
                 waiter1 = true;
                 flowchart.ExecuteBlock("Waiter1");
             }
-            else if (!star && (timeCountMultiplier >= 3 || Input.GetKeyDown(KeyCode.Backspace)))
+            else if (!star && (totalSec >= 80f || Input.GetKeyDown(KeyCode.Backspace)))
             {
                 star = true;
                 flowchart.ExecuteBlock("ShootStar");
             }
-            else if (!date_arrive && (timeCountMultiplier >= 4 || Input.GetKeyDown(KeyCode.Backspace)))
+            else if (!date_arrive && (totalSec >= 120f || Input.GetKeyDown(KeyCode.Backspace)))
             {
                 date_arrive = true;
                 flowchart.ExecuteBlock("DateHere");
             }
-            else if (!date_work && (timeCountMultiplier >= 5 || Input.GetKeyDown(KeyCode.Backspace)))
+            else if (!date_work && (totalSec >= 160f || Input.GetKeyDown(KeyCode.Backspace)))
             {
                 date_work = true;
                 flowchart.ExecuteBlock("DateJob");
             }
-            else if (!date_dates && (timeCountMultiplier >= 6 || Input.GetKeyDown(KeyCode.Backspace)))
+            else if (!date_dates && (totalSec >= 200f || Input.GetKeyDown(KeyCode.Backspace)))
             {
                 date_dates = true;
                 flowchart.ExecuteBlock("DateDates");
             }
-            else if (!waiter2 && (timeCountMultiplier >= 7 || Input.GetKeyDown(KeyCode.Backspace)))
+            else if (!waiter2 && (totalSec >= 240f || Input.GetKeyDown(KeyCode.Backspace)))
             {
                 waiter2 = true;
                 flowchart.ExecuteBlock("Waiter2");
