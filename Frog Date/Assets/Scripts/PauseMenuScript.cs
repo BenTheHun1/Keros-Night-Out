@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Fungus;
 
 public class PauseMenuScript : MonoBehaviour
 {
@@ -31,13 +32,16 @@ public class PauseMenuScript : MonoBehaviour
             Time.timeScale = 1;
             sfx.UnPause();
             sfx.loop = true;
-        }
+			FindObjectOfType<Flowchart>().SetBooleanVariable("paused", false);
+
+		}
         else
         {
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
             sfx.Pause();
-        }
+			FindObjectOfType<Flowchart>().SetBooleanVariable("paused", true);
+		}
     }
 
     // Returns the player to the title screen.

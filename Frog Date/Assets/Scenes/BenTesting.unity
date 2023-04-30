@@ -193,7 +193,7 @@ MonoBehaviour:
   clickEnabled: 0
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &17102666
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -928,7 +928,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &33299874
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2059,7 +2059,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!61 &169859484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2789,7 +2789,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &295648675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3274,7 +3274,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &312733931
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3504,7 +3504,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &368974315
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5121,6 +5121,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5207,6 +5208,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplier: 1
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &973885944
 GameObject:
   m_ObjectHideFlags: 0
@@ -5512,7 +5529,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &980830339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6192,6 +6209,7 @@ GameObject:
   - component: {fileID: 1080914786}
   - component: {fileID: 1080914788}
   - component: {fileID: 1080914787}
+  - component: {fileID: 1080914789}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -6282,8 +6300,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1080914703}
+  selectedBlocks: []
   selectedCommands: []
   variables:
   - {fileID: 1080914414}
@@ -6291,6 +6308,7 @@ MonoBehaviour:
   - {fileID: 1080914474}
   - {fileID: 1080914525}
   - {fileID: 1080914524}
+  - {fileID: 1080914789}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -21785,6 +21803,21 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 0
   targetGameObjectOLD: {fileID: 0}
+--- !u!114 &1080914789
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080914371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 2
+  key: paused
+  value: 0
 --- !u!1 &1085131797
 GameObject:
   m_ObjectHideFlags: 0
@@ -22179,7 +22212,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &1164021811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22543,7 +22576,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &1236873680
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23346,7 +23379,7 @@ MonoBehaviour:
   clickEnabled: 0
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &1331166943
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24650,7 +24683,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &1564522478
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25032,7 +25065,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &1706321227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25850,7 +25883,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!212 &1761864300
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27000,7 +27033,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 2800000, guid: 4e77b780de5da5f4ab280c6618ea40cd, type: 3}
   hotSpot: {x: 7, y: 2}
-  useEventSystem: 0
+  useEventSystem: 1
 --- !u!95 &1966254222
 Animator:
   serializedVersion: 4

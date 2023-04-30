@@ -1,7 +1,9 @@
 // This code is part of the Fungus library (https://github.com/snozbot/fungus)
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
-﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Fungus
@@ -38,7 +40,7 @@ namespace Fungus
         [Tooltip("Ignore input if a Menu dialog is currently active")]
         [SerializeField] protected bool ignoreMenuClicks = true;
 
-        protected bool dialogClickedFlag;
+		protected bool dialogClickedFlag;
 
         protected bool nextLineInputFlag;
 
@@ -98,7 +100,7 @@ namespace Fungus
             case ClickMode.Disabled:
                 break;
             case ClickMode.ClickAnywhere:
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) && !FindObjectOfType<Flowchart>().GetBooleanVariable("paused"))
                 {
                     SetClickAnywhereClickedFlag();
                 }
